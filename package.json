@@ -1,0 +1,22 @@
+{
+  "name": "puff-of-air",
+  "version": "1.0.0",
+  "description": "A weather app built with Node.js, Express and the OpenWeatherMap API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Omar Alzubi",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
