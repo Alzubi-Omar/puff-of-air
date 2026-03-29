@@ -28,6 +28,14 @@ app.post("/", async (req, res) => {
 
   const data = await response.json();
 
+  if (data.cod !== 200) {
+    return res.render("error", {
+      title: "Puff of Air - Error",
+      statusCode: data.cod,
+      error: data.message,
+    });
+  }
+
   res.render("current", {
     title: `Puff of Air - ${data.name}`,
     cityName: data.name,
