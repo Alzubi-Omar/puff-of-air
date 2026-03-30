@@ -7,6 +7,7 @@ import { config } from "./src/config/config.js";
 import { weatherRoutes } from "./src/routes/weatherRoutes.js";
 import { requestLogger } from "./src/middleware/requestLogger.js";
 import { errorHandler } from "./src/middleware/errorHandler.js";
+import { pageRoutes } from "./src/routes/pageRoutes.js";
 
 const app = express();
 
@@ -49,7 +50,7 @@ app.use(expressLayouts);
 
 // Routes
 app.use("/", weatherRoutes);
-
+app.use("/", pageRoutes);
 // Error handling
 app.use(errorHandler);
 
