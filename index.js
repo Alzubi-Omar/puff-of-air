@@ -5,6 +5,8 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { config } from "./src/config/config.js";
 import { weatherRoutes } from "./src/routes/weatherRoutes.js";
+import { requestLogger } from "./src/middleware/requestLogger.js";
+import { errorHandler } from "./src/middleware/errorHandler.js";
 
 const app = express();
 
@@ -32,11 +34,7 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Request logger
-const requestLogger = (req, res, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
-  next();
-};
+// Request logging
 app.use(requestLogger);
 
 // Middleware
@@ -52,15 +50,8 @@ app.use(expressLayouts);
 // Routes
 app.use("/", weatherRoutes);
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  res.render("error", {
-    title: "Puff of Air - Error",
-    statusCode: err.statusCode || 500,
-    error:
-      err.message || "An unexpected error occurred. Please try again later.",
-  });
-});
+// Error handling
+app.use(errorHandler);
 
 // Server
 app.listen(config.port, () => {
