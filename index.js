@@ -1,6 +1,8 @@
-import dotenv from "dotenv/config";
+import "dotenv/config";
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
+import { config } from "./src/config/config.js";
+import { weatherRoutes } from "./src/routes/weatherRoutes.js";
 
 const app = express();
 
@@ -14,42 +16,19 @@ app.set("layout", "layouts/main");
 app.use(expressLayouts);
 
 // Routes
-app.get("/", (req, res) => {
-  res.render("home", {
-    title: "Puff of Air - Home",
-  });
-});
+app.use("/", weatherRoutes);
 
-app.post("/", async (req, res) => {
-  const city = req.body.searchTemp;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}&units=imperial`;
-
-  const response = await fetch(url);
-
-  const data = await response.json();
-
-  if (data.cod !== 200) {
-    return res.render("error", {
-      title: "Puff of Air - Error",
-      statusCode: data.cod,
-      error: data.message,
-    });
-  }
-
-  res.render("current", {
-    title: `Puff of Air - ${data.name}`,
-    cityName: data.name,
-    cityTemp: Math.round(data.main.temp),
-    description: data.weather[0].description
-      .split(" ")
-      .map((word) => word[0].toUpperCase() + word.slice(1))
-      .join(" "),
-    humidity: data.main.humidity,
-    windSpeed: Math.round(data.wind.speed),
+// Error handling middleware
+app.use((err, req, res, next) => {
+  res.render("error", {
+    title: "Puff of Air - Error",
+    statusCode: err.statusCode || 500,
+    error:
+      err.message || "An unexpected error occurred. Please try again later.",
   });
 });
 
 // Server
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server is running on port ${process.env.PORT || 3000}`);
+app.listen(config.port, () => {
+  console.log(`Server is running on port ${config.port}`);
 });
