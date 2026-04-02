@@ -1,5 +1,6 @@
 import express from "express";
 import { getWeatherData } from "../services/weatherService.js";
+import { formatDate } from "../utils/dateFormatter.js";
 
 const router = express.Router();
 
@@ -28,6 +29,7 @@ router.post("/", async (req, res, next) => {
       title: `Puff of Air - ${weatherData.cityName}`,
       currentPage: "current",
       ...weatherData,
+      day: formatDate(),
     });
   } catch (error) {
     next(error);

@@ -1,8 +1,71 @@
-<main>
-  <h1><%= cityName %></h1>
-  <h2><%= cityTemp %>°F</h2>
-  <p><%= description %></p>
-  <p>Humidity: <%= humidity %>%</p>
-  <p>Wind: <%= windSpeed %> m/s</p>
-  <a href="/">Search Again</a>
+<%- contentFor('body') %>
+<main class="container-current" <%= locals.imagePath ? `style="background-image: url('${imagePath}')"` : '' %>>
+  <header class="card-title">
+    <h1>Weather Forecast</h1>
+    <h2 class="day-time"><%= locals.day || 'Today' %></h2>
+  </header>
+
+  <div class="weather-details">
+    <section class="metrics-container">
+      <div class="metric-box">
+        <div class="metric-item">
+          <span class="bold">Feels Like</span>
+          <span><%= locals.tempFeels !== undefined ? `${tempFeels} °F` : 'N/A' %></span>
+
+        </div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-item">
+          <span class="bold">Pressure</span>
+          <span><%= locals.pressure !== undefined ? `${pressure} hPa` : 'N/A' %></span>
+        </div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-item">
+          <span class="bold">Humidity</span>
+          <span><%= locals.humidity !== undefined ? `${humidity} %` : 'N/A' %></span>
+        </div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-item">
+          <span class="bold">Wind Speed</span>
+          <span><%= locals.windSpeed !== undefined ? `${windSpeed} m/s` : 'N/A' %></span>
+
+        </div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-item">
+          <span class="bold">Sunrise</span>
+          <span><%= locals.sunrise || 'N/A' %></span>
+          <span class="bold">Sunset</span>
+          <span><%= locals.sunset || 'N/A' %></span>
+        </div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-item">
+          <span class="bold">Lat</span>
+          <span><%= locals.lat || 'N/A' %></span>
+          <span class="bold">Lon</span>
+          <span><%= locals.lon || 'N/A' %></span>
+        </div>
+      </div>
+    </section>
+
+    <article class="weather-card">
+      <div class="card-body">
+        <h2 class="card-city-name"><%= locals.cityName || 'N/A' %></h2>
+        <h3 class="city-temp"><%= locals.cityTemp ? `${cityTemp} °F` : 'N/A' %></h3>
+        <h4 class="weather-description"><%= locals.description || 'N/A' %></h4>
+        <% if (locals.weatherIcon) { %>
+          <img class="weather-icon" src="<%= weatherIcon %>" alt="Weather icon" />
+        <% } %>
+      </div>
+      <div class="card-footer">
+        <p class="minmax-label">Min | Max</p>
+        <span class="minmax-temp"><%= locals.minTemp !== undefined ? minTemp : 'N/A' %> | <%= locals.maxTemp !== undefined ? maxTemp : 'N/A' %></span>
+
+        <a href="/" class="btn btn-primary home-btn">Home</a>
+      </div>
+    </article>
+  </div>
 </main>

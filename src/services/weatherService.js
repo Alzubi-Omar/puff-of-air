@@ -38,7 +38,21 @@ export const getWeatherData = async (city) => {
       .split(" ")
       .map((word) => word[0].toUpperCase() + word.slice(1))
       .join(" "),
+    weatherIcon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+    minTemp: Math.round(data.main.temp_min),
+    maxTemp: Math.round(data.main.temp_max),
+    tempFeels: Math.round(data.main.feels_like),
+    pressure: data.main.pressure,
     humidity: data.main.humidity,
     windSpeed: Math.round(data.wind.speed),
+    sunrise: new Date(
+      (data.sys.sunrise + data.timezone) * 1000,
+    ).toLocaleTimeString("en-US", { timeZone: "UTC" }),
+    sunset: new Date(
+      (data.sys.sunset + data.timezone) * 1000,
+    ).toLocaleTimeString("en-US", { timeZone: "UTC" }),
+
+    lat: data.coord.lat.toFixed(2),
+    lon: data.coord.lon.toFixed(2),
   };
 };
