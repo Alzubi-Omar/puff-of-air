@@ -54,5 +54,8 @@ export const getWeatherData = async (city) => {
 
     lat: data.coord.lat.toFixed(2),
     lon: data.coord.lon.toFixed(2),
+    imagePath:
+      config.weatherImages[data.weather[0].main.toLowerCase()] ||
+      config.weatherImages.default,
   };
 };

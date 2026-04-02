@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
   res.render("home", {
     title: "Puff of Air - Home",
     currentPage: "home",
+    pageCss: "home",
   });
 });
 
@@ -28,6 +29,7 @@ router.post("/", async (req, res, next) => {
     res.render("current", {
       title: `Puff of Air - ${weatherData.cityName}`,
       currentPage: "current",
+      pageCss: "current",
       ...weatherData,
       day: formatDate(),
     });

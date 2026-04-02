@@ -1,5 +1,5 @@
 <%- contentFor('body') %>
-<main class="container-current" <%= locals.imagePath ? `style="background-image: url('${imagePath}')"` : '' %>>
+<main class="container-current" style="<%= locals.imagePath ? `background-image: url('${imagePath}')` : '' %>">
   <header class="card-title">
     <h1>Weather Forecast</h1>
     <h2 class="day-time"><%= locals.day || 'Today' %></h2>
