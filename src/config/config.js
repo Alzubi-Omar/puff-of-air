@@ -9,6 +9,8 @@ export const config = {
   apiUrl: "https://api.openweathermap.org/data/2.5/weather",
   geoUrl: "https://api.openweathermap.org/geo/1.0/direct",
   unit: "imperial",
+  newsApiKey: process.env.NEWS_API_KEY,
+  newsApiUrl: "https://newsapi.org/v2/everything",
   weatherImages: {
     clear: "/images/sunnyWeather.jpg",
     snow: "/images/snowyWeather.jpg",

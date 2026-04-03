@@ -1,4 +1,5 @@
 import express from "express";
+import { getWeatherNews } from "../services/newsService.js";
 
 const router = express.Router();
 
@@ -11,7 +12,21 @@ const renderPage = (page, title) => (req, res) => {
 };
 
 router.get("/about", renderPage("about", "About"));
-router.get("/news", renderPage("news", "News"));
 router.get("/faqs", renderPage("faqs", "FAQs"));
+
+router.get("/news", async (req, res, next) => {
+  try {
+    const articles = await getWeatherNews();
+    res.render("news", {
+      title: "Puff of Air - Weather News",
+      currentPage: "news",
+      pageCss: "news",
+      articles: articles || [],
+    });
+  } catch (error) {
+    console.error("Error fetching news:", error.message);
+    next(error);
+  }
+});
 
 export { router as pageRoutes };

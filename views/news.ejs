@@ -1,7 +1,39 @@
-<%-contentFor('body')%>
-<main class="container page-content">
-  <div class="content-wrapper">
-    <h1 class="page-title">Latest Weather News</h1>
-    <p>Weather news and updates coming soon.</p>
+<%- contentFor('body') %>
+<main class="news-container">
+  <div class="news-header">
+    <h1 class="news-title">Latest Weather News</h1>
+    <p class="news-subtitle">Real-time weather and climate stories from around the world</p>
   </div>
+
+  <section class="news-grid">
+    <% if (articles && articles.length > 0) { %>
+      <% articles.forEach(article => { %>
+        <article class="news-card">
+          <% if (article.image) { %>
+            <div class="news-card-image">
+              <img 
+                src="<%= article.image %>" 
+                alt="<%= article.title %>"
+                loading="lazy"
+                onerror="this.parentElement.style.display='none'"
+              />
+            </div>
+          <% } %>
+          <div class="news-card-body">
+            <div class="news-card-meta">
+              <span class="news-source"><%= article.source %></span>
+              <span class="news-date"><%= article.publishedAt %></span>
+            </div>
+            <h2 class="news-card-title"><%= article.title %></h2>
+            <p class="news-card-description"><%= article.description %></p>
+            <a href="<%= article.url %>" target="_blank" rel="noopener noreferrer" class="news-read-more">
+              Read More →
+            </a>
+          </div>
+        </article>
+      <% }) %>
+    <% } else { %>
+      <p class="news-empty">No news articles available at the moment. Please check back later.</p>
+    <% } %>
+  </section>
 </main>
