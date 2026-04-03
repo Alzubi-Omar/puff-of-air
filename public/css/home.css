@@ -1,0 +1,148 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+}
+
+/* Left side */
+.home-left {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.weather-icons-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.weather-icons-row img {
+  opacity: 0.85;
+  transition: transform var(--transition);
+}
+
+.weather-icons-row img:hover {
+  transform: translateY(-4px);
+}
+
+.home-headline {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.home-headline span {
+  color: var(--accent);
+}
+
+.home-subtext {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+/* Right side - search card */
+.home-right {
+  flex: 1;
+}
+
+.search-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search-card-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-card-brand img {
+  opacity: 0.9;
+}
+
+.search-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.search-label {
+  width: 100%;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.search-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  font-family: "Inter", sans-serif;
+}
+
+.search-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* —— Responsive —— */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .home-headline {
+    font-size: 2rem;
+  }
+}

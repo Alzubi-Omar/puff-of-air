@@ -1,12 +1,41 @@
-<main>
-  <h1>Welcome to Puff of Air</h1>
-  <form action="/" method="post">
-    <input
-      type="search"
-      name="searchTemp"
-      placeholder="Search for a city"
-      required
-    />
-    <button type="submit">Search</button>
-  </form>
-</main>
+<%- contentFor('body') %>
+<div class="home-container">
+  <section class="home-left">
+    <div class="weather-icons-row">
+      <img src="/icons/electricClouds.svg" alt="Storm" width="65" height="65" />
+      <img src="/icons/nightMoon.svg" alt="Night" width="65" height="65" />
+      <img src="/icons/weather.svg" alt="Sun" width="65" height="65" />
+      <img src="/icons/tempInfo.svg" alt="Temperature" width="65" height="65" />
+    </div>
+    <h1 class="home-headline">Daily Weather <span>Forecast</span> Update</h1>
+    <p class="home-subtext">
+      Real-time weather conditions for any city worldwide. Search by city name
+      and get instant results.
+    </p>
+  </section>
+
+  <section class="home-right">
+    <div class="search-card">
+      <div class="search-card-brand">
+        <img
+          src="/icons/windIcon.svg"
+          alt="Puff of Air"
+          width="60"
+          height="60"
+        />
+        <h2 class="search-card-title">Puff of Air</h2>
+      </div>
+      <label class="search-label">Location</label>
+      <form action="/" method="post" class="search-form">
+        <input
+          type="search"
+          class="search-input"
+          name="searchTemp"
+          placeholder="City name..."
+          required
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </div>
+  </section>
+</div>

@@ -18,9 +18,9 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
-        styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         imgSrc: ["'self'", "data:", "https://openweathermap.org"],
-        fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
         scriptSrcElem: ["'self'", "https://cdn.jsdelivr.net"],
         styleSrcElem: ["'self'", "https://cdn.jsdelivr.net"],
       },

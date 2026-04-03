@@ -1,6 +1,43 @@
-<header>
-  <a href="/">Puff of Air</a>
-  <nav>
-    <a href="/">Home</a>
+<header class="site-header">
+  <nav class="nav-container">
+    <a href="/" class="nav-brand">
+      <img
+        src="/icons/windIcon.svg"
+        alt="Puff of Air logo"
+        width="40"
+        height="40"
+      />
+      <span>Puff of Air</span>
+    </a>
+    <ul class="nav-links">
+      <li>
+        <a
+          href="/"
+          class="nav-link <%= currentPage === 'home' ? 'active' : '' %>"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/news"
+          class="nav-link <%= currentPage === 'news' ? 'active' : '' %>"
+          >News</a
+        >
+      </li>
+      <li>
+        <a
+          href="/faqs"
+          class="nav-link <%= currentPage === 'faqs' ? 'active' : '' %>"
+          >FAQs</a
+        >
+      </li>
+      <li>
+        <a
+          href="/about"
+          class="nav-link <%= currentPage === 'about' ? 'active' : '' %>"
+          >About</a
+        >
+      </li>
+    </ul>
   </nav>
 </header>

@@ -54,7 +54,7 @@
     <article class="weather-card">
       <div class="card-body">
         <h2 class="card-city-name"><%= locals.cityName || 'N/A' %></h2>
-        <h3 class="city-temp"><%= locals.cityTemp ? `${cityTemp} °F` : 'N/A' %></h3>
+        <h3 class="city-temp"><%= locals.cityTemp !== undefined ? `${cityTemp} °F` : 'N/A' %></h3>
         <h4 class="weather-description"><%= locals.description || 'N/A' %></h4>
         <% if (locals.weatherIcon) { %>
           <img class="weather-icon" src="<%= weatherIcon %>" alt="Weather icon" />
