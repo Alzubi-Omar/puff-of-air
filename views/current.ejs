@@ -6,50 +6,52 @@
   </header>
 
   <div class="weather-details">
-    <section class="metrics-container">
-      <div class="metric-box">
-        <div class="metric-item">
-          <span class="bold">Feels Like</span>
-          <span><%= locals.tempFeels !== undefined ? `${tempFeels} °F` : 'N/A' %></span>
-
-        </div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-item">
-          <span class="bold">Pressure</span>
-          <span><%= locals.pressure !== undefined ? `${pressure} hPa` : 'N/A' %></span>
-        </div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-item">
-          <span class="bold">Humidity</span>
-          <span><%= locals.humidity !== undefined ? `${humidity} %` : 'N/A' %></span>
-        </div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-item">
-          <span class="bold">Wind Speed</span>
-          <span><%= locals.windSpeed !== undefined ? `${windSpeed} m/s` : 'N/A' %></span>
-
-        </div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-item">
-          <span class="bold">Sunrise</span>
-          <span><%= locals.sunrise || 'N/A' %></span>
-          <span class="bold">Sunset</span>
-          <span><%= locals.sunset || 'N/A' %></span>
-        </div>
-      </div>
-      <div class="metric-box">
-        <div class="metric-item">
-          <span class="bold">Lat</span>
-          <span><%= locals.lat || 'N/A' %></span>
-          <span class="bold">Lon</span>
-          <span><%= locals.lon || 'N/A' %></span>
-        </div>
-      </div>
-    </section>
+<section class="metrics-container">
+  <div class="metric-box">
+    <div class="metric-item">
+      <img src="/icons/temp-feels.svg" width="36" height="36" alt="Feels like" />
+      <span class="bold">Feels Like</span>
+      <span><%= locals.tempFeels !== undefined ? `${tempFeels} °F` : 'N/A' %></span>
+    </div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-item">
+      <img src="/icons/pressure.svg" width="36" height="36" alt="Pressure" />
+      <span class="bold">Pressure</span>
+      <span><%= locals.pressure !== undefined ? `${pressure} hPa` : 'N/A' %></span>
+    </div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-item">
+      <img src="/icons/humidity.svg" width="36" height="36" alt="Humidity" />
+      <span class="bold">Humidity</span>
+      <span><%= locals.humidity !== undefined ? `${humidity} %` : 'N/A' %></span>
+    </div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-item">
+      <img src="/icons/wind-speed.svg" width="36" height="36" alt="Wind Speed" />
+      <span class="bold">Wind Speed</span>
+      <span><%= locals.windSpeed !== undefined ? `${windSpeed} m/s` : 'N/A' %></span>
+    </div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-item">
+      <span class="bold">Sunrise</span>
+      <span><%= locals.sunrise || 'N/A' %></span>
+      <span class="bold">Sunset</span>
+      <span><%= locals.sunset || 'N/A' %></span>
+    </div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-item">
+      <span class="bold">Lat</span>
+      <span><%= locals.lat || 'N/A' %></span>
+      <span class="bold">Lon</span>
+      <span><%= locals.lon || 'N/A' %></span>
+    </div>
+  </div>
+</section>
 
     <article class="weather-card">
       <div class="card-body">
