@@ -1,5 +1,6 @@
-<main>
-  <h1>Error <%= statusCode %></h1>
-  <p><%= error %></p>
-  <a href="/"> Try Again</a>
-</main>
+<%- contentFor('body') %>
+<div class="error-container">
+  <h1 class="error-title">Error <%= statusCode %></h1>
+  <p class="error-message"><%= error %></p>
+  <a href="/" class="home-link">Try Again</a>
+</div>

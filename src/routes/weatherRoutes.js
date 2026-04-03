@@ -21,6 +21,7 @@ router.post("/", async (req, res, next) => {
         title: "Puff of Air - Error",
         statusCode: 400,
         error: "Please enter a city name.",
+        currentPage: "error",
       });
     }
 

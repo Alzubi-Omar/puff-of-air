@@ -5,5 +5,6 @@ export const errorHandler = (err, req, res, next) => {
     statusCode: err.statusCode || 500,
     error:
       err.message || "An unexpected error occurred. Please try again later.",
+    currentPage: "error",
   });
 };
