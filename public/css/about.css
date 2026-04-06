@@ -148,7 +148,7 @@
   opacity: 0.8;
 }
 
-/* Responsive */
+/* —— Responsive —— */
 @media (max-width: 768px) {
   .about-grid {
     flex-direction: column;
