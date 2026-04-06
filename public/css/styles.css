@@ -148,6 +148,7 @@ footer {
 .nav-icon img {
   opacity: 0.6;
   transition: opacity var(--transition);
+  filter: brightness(0) invert(1);
 }
 
 .nav-icon:hover img {
