@@ -1,10 +1,97 @@
-<%-contentFor('body')%>
-<main class="container page-content">
-  <div class="content-wrapper">
-    <h1 class="page-title">About</h1>
-    <p>
-      Puff of Air is a weather app built with Node.js, Express and the
-      OpenWeatherMap API.
-    </p>
-  </div>
+<%- contentFor('body') %>
+<main class="about-container">
+  <section class="about-grid">
+    <div class="about-left">
+      <h1 class="about-title">About Puff of Air</h1>
+      <p class="about-description">
+        <p class="about-description">
+          Puff of Air is a real-time weather app built to deliver clean, accurate weather conditions for any city worldwide — with a focus on clean architecture, security best practices, and a thoughtful user experience.
+        </p>
+      </p>
+      <p class="about-description">
+        The app uses the OpenWeatherMap Geocoding API to convert city names into
+        coordinates before fetching live weather data — following the modern,
+        non-deprecated approach to location-based queries.
+      </p>
+
+      <div class="tech-stack">
+        <h2 class="tech-title">Built With</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <img src="/icons/nodejs.svg" alt="Node.js" width="48" height="48" />
+            <span>Node.js</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="/icons/express.svg"
+              alt="Express"
+              width="48"
+              height="48"
+            />
+            <span>Express</span>
+          </div>
+          <div class="tech-item">
+            <img src="/icons/ejs.svg" alt="EJS" width="48" height="48" />
+            <span>EJS</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="/icons/api.svg"
+              alt="OpenWeatherMap"
+              width="55"
+              height="48"
+            />
+            <span>OpenWeatherMap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <img src="/images/avatar-omar.jpg" alt="Omar Alzubi" />
+        </div>
+        <div class="profile-info">
+          <h2 class="profile-name">Omar Alzubi</h2>
+          <p class="profile-role">Software Engineer · Product Manager</p>
+          <p class="profile-bio">
+            BSc & MSc in Software Engineering, MBA. I build full-stack web
+            applications with a focus on clean code, real-world problem solving,
+            and shipping products that actually work.
+          </p>
+          <div class="profile-links">
+            <a
+              href="https://www.linkedin.com/in/omaralzubi-007oa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="profile-link"
+            >
+              <img
+                src="/icons/linkedinIcon.svg"
+                alt="LinkedIn"
+                width="22"
+                height="22"
+              />
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/Alzubi-Omar"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="profile-link"
+            >
+              <img
+                src="/icons/githubIcon.svg"
+                alt="GitHub"
+                width="22"
+                height="22"
+              />
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

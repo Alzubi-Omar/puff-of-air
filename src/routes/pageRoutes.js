@@ -10,18 +10,6 @@ const renderPage = (page, title) => (req, res) => {
     pageCss: page,
   });
 };
-
-router.get("/about", renderPage("about", "About"));
-
-router.get("/faqs", (req, res) => {
-  res.render("faqs", {
-    title: "Puff of Air - FAQs",
-    currentPage: "faqs",
-    pageCss: "faqs",
-    scripts: "/js/faqs.js",
-  });
-});
-
 router.get("/news", async (req, res, next) => {
   try {
     const articles = await getWeatherNews();
@@ -36,5 +24,22 @@ router.get("/news", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/faqs", (req, res) => {
+  res.render("faqs", {
+    title: "Puff of Air - FAQs",
+    currentPage: "faqs",
+    pageCss: "faqs",
+    scripts: "/js/faqs.js",
+  });
+});
+
+router.get("/about", (req, res) =>
+  res.render("about", {
+    title: "Puff of Air - About",
+    currentPage: "about",
+    pageCss: "about",
+  }),
+);
 
 export { router as pageRoutes };
