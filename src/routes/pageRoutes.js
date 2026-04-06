@@ -12,7 +12,15 @@ const renderPage = (page, title) => (req, res) => {
 };
 
 router.get("/about", renderPage("about", "About"));
-router.get("/faqs", renderPage("faqs", "FAQs"));
+
+router.get("/faqs", (req, res) => {
+  res.render("faqs", {
+    title: "Puff of Air - FAQs",
+    currentPage: "faqs",
+    pageCss: "faqs",
+    scripts: "/js/faqs.js",
+  });
+});
 
 router.get("/news", async (req, res, next) => {
   try {

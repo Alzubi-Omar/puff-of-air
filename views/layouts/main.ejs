@@ -15,5 +15,10 @@
     <%- include('../partials/header') %>
     <%- body %>
     <%- include('../partials/footer') %>
+
+    <% if (typeof scripts !== 'undefined') { %>
+      <script src="<%= scripts %>"></script>
+    <% } %>
+
   </body>
 </html>

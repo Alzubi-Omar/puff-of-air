@@ -1,7 +1,98 @@
 <%- contentFor('body') %>
-<main class="container page-content">
-  <div class="content-wrapper">
-    <h1 class="page-title">Frequently Asked Questions</h1>
-    <p>FAQs coming soon.</p>
+<main class="faqs-container">
+  <div class="faqs-header">
+    <h1 class="faqs-title">Frequently Asked Questions</h1>
+    <p class="faqs-subtitle">Everything you need to know about Puff of Air</p>
   </div>
+
+  <section class="faqs-list">
+    <div class="faq-item">
+      <button class="faq-question">
+        How do I search for weather?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Enter any city name in the search box on the home page and click
+          Search. You'll get real-time weather conditions including temperature,
+          humidity, wind speed, and more.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Where does the weather data come from?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          We use the
+          <a
+            href="https://openweathermap.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            >OpenWeatherMap API</a
+          >
+          — one of the most trusted weather data providers in the world, with
+          data from over 40,000 weather stations globally.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How accurate is the weather data?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Current weather data is updated every 10 minutes from local weather
+          stations. Accuracy varies by location — major cities tend to have more
+          precise readings than rural areas.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What does "Feels Like" temperature mean?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Feels Like accounts for humidity and wind speed to give you a more
+          realistic sense of how the temperature will feel on your skin — not
+          just what the thermometer reads.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Why are temperatures shown in Fahrenheit?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          The current version displays temperatures in Fahrenheit. A unit toggle
+          for Celsius is planned for a future update.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I search by country code?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Yes — for more precise results you can enter a city and country code
+          together, for example "London, GB" or "Paris, FR". This helps when
+          multiple cities share the same name.
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
