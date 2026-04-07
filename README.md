@@ -167,6 +167,7 @@ Then open your browser at `http://localhost:3000`
 - LinkedIn: [omaralzubi-007oa](https://www.linkedin.com/in/omaralzubi-007oa/)
 - GitHub: [Alzubi-Omar](https://github.com/Alzubi-Omar)
 - Portfolio: [omar-alzubi-portfolio.netlify.app](https://omar-alzubi-portfolio.netlify.app)
+- Email: omaralzubi.dev@gmail.com
 
 ---
 
