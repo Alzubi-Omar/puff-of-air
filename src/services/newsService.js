@@ -1,5 +1,18 @@
 import { config } from "../config/config.js";
 
+const WEATHER_KEYWORDS = [
+  "weather",
+  "storm",
+  "flood",
+  "snow",
+  "rain",
+  "climate",
+  "tornado",
+  "drought",
+  "temperature",
+  "forecast",
+];
+
 /**
  * Formats a date string into a readable format.
  * @param {string} dateString - ISO date string
@@ -33,6 +46,12 @@ export const getWeatherNews = async () => {
     for (const article of data.articles) {
       const title = article?.title?.trim();
       if (!title || seenTitles.has(title)) continue;
+      if (
+        !WEATHER_KEYWORDS.some((keyword) =>
+          title.toLowerCase().includes(keyword),
+        )
+      )
+        continue;
       seenTitles.add(title);
       results.push({
         title,
