@@ -1,5 +1,10 @@
 import { config } from "../config/config.js";
 
+/**
+ * Formats a date string into a readable format.
+ * @param {string} dateString - ISO date string
+ * @returns {string} Formatted date or "Unknown date"
+ */
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   if (isNaN(date)) return "Unknown date";

@@ -1,8 +1,17 @@
+import "dotenv/config";
+
+if (!process.env.API_KEY) {
+  console.warn("⚠️  WARNING: API_KEY is not set in .env");
+}
+
+if (!process.env.NEWS_API_KEY) {
+  console.warn("⚠️  WARNING: NEWS_API_KEY is not set in .env");
+}
+
 /**
- * Application configuration
+ * Application configuration.
  * Loads environment variables and defines app-wide settings.
  */
-
 export const config = {
   port: process.env.PORT || 3000,
   apiKey: process.env.API_KEY,
